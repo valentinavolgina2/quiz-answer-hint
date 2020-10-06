@@ -1,0 +1,32 @@
+<html lang="en"> 
+    <head> 
+	<meta charset="utf-8">
+     <title></title> 
+	 <link rel = "stylesheet" type = "text/css" href = "style.css">
+    </head> 
+    <body> 
+	
+		<div class="container">
+			<div id="textbox" class="gradeable-textbox-area">
+				<span class="gradable-hint" id="lblHint" style="visibility: hidden;"></span>
+				<label>Type your answer: </label>
+				<div type="text" id="txtAnswer" class="form-control gradeable-textbox" onfocusout="hideHint()" oninput="checkAnswerOnInput()" contentEditable="true"></div>
+			</div>
+			<div>
+				<label>Correct answer: </label>
+				<div type="text" id="txtExpected" class="form-control gradeable-textbox" oninput="setExpectedAnswer()" contentEditable="true">some answer</div>
+			</div>
+			</br>
+			<hr>
+			<span style="color: green;font-weight: bold;">Green letter</span><span> - correct letter </span></br>
+			<span style="color: red;font-weight: bold;">Red letter</span><span> - wrong letter </span></br>
+			<span style="color: red;font-weight: bold; text-decoration:line-through;">Crossed red letter</span><span> - extra letter </span></br>
+			<span style="color: red;font-weight: bold;">_</span><span> - missing letter </span></br>
+		</div>
+
+  
+	
+    <script type="text/javascript" src="hint.js">
+    </script>
+    </body> 
+</html> 
