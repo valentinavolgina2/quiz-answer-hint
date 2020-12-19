@@ -4,9 +4,9 @@ span {
 
 .gradeable-hint {
   visibility: hidden;
-  padding: 0px 30px;
+  /*padding: 0px 30px;
   border: solid 1px #dadcde;
-  border-radius: 12px;
+  border-radius: 12px;*/
   white-space: nowrap;
 }
 

@@ -1,16 +1,18 @@
 
 const inputDiv = document.getElementById("txtAnswer");
 const hintField = document.getElementById("lblHint");
-const answerDiv = document.getElementById("txtExpected");
 const caseSens = document.getElementById("caseSens");
+const correctAnswer = "George Washington";
+
+document.getElementById("correctAnswer").innerText = `Correct answer: ${correctAnswer}.`
 
 inputDiv.addEventListener('input',function(){
-    const currentAnswer = caseSens.checked ? inputDiv.textContent : inputDiv.textContent.toLowerCase();
-    const correctAnswer = caseSens.checked ? answerDiv.textContent : answerDiv.textContent.toLowerCase();
-	const editingString = evaluateAnswer(currentAnswer, correctAnswer);
+    const currentAnswerCS = caseSens.checked ? inputDiv.textContent : inputDiv.textContent.toLowerCase();
+    const correctAnswerCS = caseSens.checked ? correctAnswer : correctAnswer.toLowerCase();
+	const editingString = evaluateAnswer(currentAnswerCS, correctAnswerCS);
 
 	hintField.style.visibility = 'visible';
-	hintField.innerHTML = getHint(currentAnswer, editingString);
+	hintField.innerHTML = getHint(currentAnswerCS, editingString);
 
 });
 
@@ -18,10 +20,10 @@ inputDiv.addEventListener('focusout',()=>(hintField.style.visibility = 'hidden')
 function getHint(answer, editingString) {
 
     if (editingString === "") {
-		return "<span style='color: green;font-weight: bold;'>" + answer + "<\/span>";
+		return "<span>Hint: </span><span class='correct'>" + answer + "<\/span>";
 	}
 
-	let hint = "";
+	let hint = "<span>Hint: </span>";
     let idx = 0;
 	for (let i = 0; i < editingString.length; i++) {
 
